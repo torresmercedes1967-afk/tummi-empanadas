@@ -1,740 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tummi - Artisanal & Fresh | Artisanal Peruvian Empanadas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Tummi - Artisanal & Fresh</title>
     <style>
-        :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #141414;
-            --gold: #D4AF37;
-            --gold-light: #f3e5ab;
-            --terracotta: #BF5E4F;
-            --terracotta-dark: #964739;
-            --text-main: #f5f5f5;
-            --text-muted: #b0b0b0;
-            --border-color: #2a2a2a;
-        }
-
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
+            text-align: center;
         }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* BORDER DECORATION INCA */
-        .inca-border {
-            height: 10px;
-            width: 100%;
-            background: linear-gradient(90deg, var(--terracotta) 20%, var(--gold) 20%, var(--gold) 40%, var(--terracotta) 40%, var(--terracotta) 60%, var(--gold) 60%, var(--gold) 80%, var(--terracotta) 80%);
-            background-size: 80px 100%;
-        }
-
-        /* HEADER & NAVIGATION */
         header {
-            position: fixed;
-            top: 10px;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
+            padding: 40px 20px;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #b5651d; /* Detalle terracotta */
         }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            color: var(--text-main);
-        }
-
-        .nav-logo img {
-            width: 45px;
-            height: 45px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
-        }
-
-        .nav-logo span {
-            font-family: 'Cinzel', serif;
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: var(--gold);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 15px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--gold);
-        }
-
-        /* HERO SECTION WITH VIDEO BACKGROUND */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-            margin-top: 20px;
-        }
-
-        .hero-video-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .hero-video-bg video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.45);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 90%);
-            z-index: 2;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            max-width: 900px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .hero-logo-img {
-            width: 160px;
-            height: 160px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(48px, 8vw, 84px);
-            color: var(--gold);
-            letter-spacing: 6px;
-            margin-bottom: 10px;
-            line-height: 1.1;
-        }
-
-        .hero .subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(18px, 3vw, 28px);
-            color: var(--terracotta);
-            letter-spacing: 10px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-            padding: 14px 35px;
-            font-family: 'Cinzel', serif;
-            font-size: 16px;
-            letter-spacing: 2px;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: var(--gold);
-            color: var(--bg-primary);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 100px 8%;
-            position: relative;
-        }
-
-        section:nth-child(even) {
-            background-color: var(--bg-secondary);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .section-title h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(32px, 5vw, 48px);
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: var(--terracotta);
-            font-size: 18px;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .gold-divider {
-            width: 80px;
-            height: 3px;
-            background: var(--terracotta);
-            margin: 15px auto 0 auto;
-        }
-
-        /* PILLARS */
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .pillar-card {
-            background: rgba(191, 94, 79, 0.04);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 8px;
-            padding: 50px 35px;
-            text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--gold);
-        }
-
-        .pillar-card i {
-            font-size: 45px;
-            color: var(--gold);
-            margin-bottom: 25px;
-        }
-
-        .pillar-card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 24px;
-            color: var(--text-main);
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .pillar-card p {
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        /* MENU GRID */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
-        }
-
-        .menu-item {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .menu-img-wrapper {
-            height: 260px;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .menu-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .menu-item:hover .menu-img-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .menu-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--terracotta);
-            color: #fff;
-            padding: 6px 14px;
-            font-size: 12px;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
-            border-radius: 3px;
-        }
-
-        .menu-details {
-            padding: 30px;
-        }
-
-        .menu-details h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 22px;
-            color: var(--gold);
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .menu-details p {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .menu-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 15px;
-            font-size: 14px;
-            color: var(--gold-light);
-            font-weight: 500;
-        }
-
-        /* CRAFT */
-        .craft-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .craft-text h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(32px, 4vw, 42px);
-            color: var(--gold);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .craft-text p {
-            color: var(--text-muted);
-            font-size: 17px;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        .craft-features {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .craft-features li {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 16px;
-            color: var(--text-main);
-        }
-
-        .craft-features li i {
-            color: var(--gold);
-            font-size: 18px;
-        }
-
-        .craft-image {
-            border: 2px solid var(--terracotta);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-        }
-
-        .craft-image img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* TABLE */
-        .table-responsive {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        th {
-            background: #1c1c1c;
-            color: var(--gold);
-            padding: 22px 25px;
-            text-align: left;
-            font-family: 'Cinzel', serif;
-            font-size: 18px;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--terracotta);
-        }
-
-        td {
-            padding: 20px 25px;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tr:hover td {
-            color: var(--text-main);
-            background: rgba(212, 175, 55, 0.02);
-        }
-
-        /* FOOTER */
-        footer {
-            background: #050505;
-            border-top: 1px solid var(--border-color);
-            padding: 80px 8% 40px 8%;
-            text-align: center;
-        }
-
-        .footer-logo {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-        }
-
-        .footer-title {
-            font-family: 'Cinzel', serif;
-            font-size: 28px;
-            color: var(--gold);
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
-
-        .footer-tagline {
-            color: var(--terracotta);
-            font-family: 'Cinzel', serif;
-            font-size: 16px;
-            letter-spacing: 4px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
+        .logo-video {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 1px solid var(--border-color);
-            background: var(--bg-secondary);
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #b5651d;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #b5651d;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+        .menu-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: left;
+        }
+        .menu-category {
+            font-size: 1.5rem;
+            color: #b5651d;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .menu-item {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 20px;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            justify-content: space-between;
+            margin: 20px 0;
+            font-size: 1.1rem;
         }
-
-        .social-links a:hover {
-            background: var(--gold);
-            color: var(--bg-primary);
-            border-color: var(--gold);
-            transform: translateY(-3px);
+        .menu-item span {
+            color: #888;
         }
-
-        .copyright {
-            color: #666;
-            font-size: 14px;
-            letter-spacing: 1px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-        }
-
-        @media (max-width: 992px) {
-            .craft-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            nav ul {
-                display: none;
-            }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #777;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="inca-border"></div>
-
     <header>
-        <a href="#" class="nav-logo">
-            <img src="https://raw.githubusercontent.com/torremercedes1967-afk/tummi/main/logo.png" alt="Tummi Logo">
-            <span>TUMMI</span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#craft">Craft</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <video autoplay muted loop playsinline class="logo-video">
+            <source src="pon-aqui-el-nombre-de-tu-video.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        
+        <h1>TUMMI</h1>
+        <p class="subtitle">Artisanal & Fresh Empanadas</p>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-video-bg">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-plate-with-empanadas-42861-large.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
+    <div class="menu-container">
+        <h2 class="menu-category">Nuestras Empanadas</h2>
+        
+        <div class="menu-item">
+            <p>Carne de Res Tradicional</p>
+            <span>Artisanal</span>
         </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img src="https://raw.githubusercontent.com/torremercedes1967-afk/tummi/main/logo.png" alt="Tummi Emblem" class="hero-logo-img">
-            <h1>TUMMI</h1>
-            <div class="subtitle">Artisanal & Fresh</div>
-            <p>Strictly oven-baked gourmet Peruvian empanadas, handcrafted every morning with pure ingredients and Andean heritage.</p>
-            <a href="#menu" class="btn-primary">Explore Menu</a>
+        <div class="menu-item">
+            <p>Pollo Jugoso</p>
+            <span>Artisanal</span>
         </div>
-    </section>
+        <div class="menu-item">
+            <p>Cerdo Marinado</p>
+            <span>Artisanal</span>
+        </div>
+        <div class="menu-item">
+            <p>Espinaca y Kale</p>
+            <span>Vegetal</span>
+        </div>
+        <div class="menu-item">
+            <p>Carne Vegana Plant-Based</p>
+            <span>Plant-Based</span>
+        </div>
+    </div>
 
-    <section id="craft">
-        <div class="section-title">
-            <p>Philosophy</p>
-            <h2>The Art of Handmade</h2>
-            <div class="gold-divider"></div>
-        </div>
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <i class="fa-solid fa-fire-burner"></i>
-                <h3>100% Oven-Baked</h3>
-                <p>We achieve a golden, light, and crispy texture in the oven, respecting the genuine flavor of each ingredient without excess grease.</p>
-            </div>
-            <div class="pillar-card">
-                <i class="fa-solid fa-mortar-pestle"></i>
-                <h3>Small Batches</h3>
-                <p>We prepare each recipe daily in limited quantities to guarantee absolute freshness and oven warmth in every bite.</p>
-            </div>
-            <div class="pillar-card">
-                <i class="fa-solid fa-wheat-awn"></i>
-                <h3>Clean Label</h3>
-                <p>Premium flour, fine butter, local farm vegetables, and traditional Peruvian spices. Zero preservatives.</p>
-            </div>
-        </div>
-    </section>
-
-    <section style="background-color: var(--bg-secondary);">
-        <div class="craft-container">
-            <div class="craft-text">
-                <h2>Andean Tradition & Culinary Excellence</h2>
-                <p>Inspired by geometric perfection and respect for the earth of our ancestors, at Tummi every empanada is a unique piece shaped with the traditional handmade "repulgue" fold.</p>
-                <ul class="craft-features">
-                    <li><i class="fa-solid fa-circle-check"></i> Hand-cut selected cuts of meat (lomo style).</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Smoked and sautéed with natural Peruvian ají amarillo.</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Vegetarian and 100% plant-based options of the highest quality.</li>
-                </ul>
-            </div>
-            <div class="craft-image">
-                <img src="https://raw.githubusercontent.com/torremercedes1967-afk/tummi/main/logo.png" alt="Tummi Oven-Baked Empanada">
-            </div>
-        </div>
-    </section>
-
-    <section id="menu">
-        <div class="section-title">
-            <p>Our Collection</p>
-            <h2>Artisanal Menu</h2>
-            <div class="gold-divider"></div>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <div class="menu-img-wrapper">
-                    <img src="https://raw.githubusercontent.com/torremercedes1967-afk/tummi/main/logo.png" alt="Beef Empanada">
-                    <span class="menu-badge">Classic</span>
-                </div>
-                <div class="menu-details">
-                    <h3>Artisanal Beef</h3>
-                    <p>Selected cubes of slow-marinated beef, caramelized onion, Peruvian olives, and hard-boiled egg.</p>
-                    <div class="menu-footer">
-                        <span>Baked to perfection</span>
-                        <span><i class="fa-solid fa-fire"></i> Hot</span>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-img-wrapper">
-                    <img src="https://raw.githubusercontent.com/torremercedes1967-afk/tummi/main/logo.png" alt="Chicken Empanada">
-                    <span class="menu-badge">Aromatic</span>
-                </div>
-                <div class="menu-details">
-                    <h3>Ají Amarillo Chicken</h3>
-                    <p>Hand-shredded chicken breast cooked in a creamy and vibrant sofrito of Peruvian ají amarillo and fine spices.</p>
-                    <div class="menu-footer">
-                        <span>Baked to perfection</span>
-                        <span><i class="fa-solid fa-fire"></i> Hot</span>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <div class="menu-img-wrapper">
-                    <img src="https://raw.githubusercontent.com/torremercedes1967-afk/tummi/main/logo.png" alt="Vegan Empanada">
-                    <span class="menu-badge">Plant-Based</span>
-                </div>
-                <div class="menu-details">
-                    <h3>Vegan Beef & Spices</h3>
-                    <p>100% pea plant protein seasoned with Andean cumin and smoked notes. All the intensity without animal ingredients.</p>
-                    <div class="menu-footer">
-                        <span>100% Vegan</span>
-                        <span><i class="fa-solid fa-seedling"></i> Healthy</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-title">
-            <p>Flavor Guide</p>
-            <h2>Menu Specifications</h2>
-            <div class="gold-divider"></div>
-        </div>
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Variety</th>
-                        <th>Main Ingredients</th>
-                        <th>Flavor Profile</th>
-                        <th>Preparation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Artisanal Beef</strong></td>
-                        <td>Hand-cut beef, Onion, Olives, Egg</td>
-                        <td>Rich & Traditional</td>
-                        <td>Oven-Baked</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ají Amarillo Chicken</strong></td>
-                        <td>Shredded chicken, Ají Amarillo cream</td>
-                        <td>Smooth & Spiced</td>
-                        <td>Oven-Baked</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Smoked Pork</strong></td>
-                        <td>12h cured pork, Fine herbs</td>
-                        <td>Juicy & Deep</td>
-                        <td>Oven-Baked</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Kale & Spinach</strong></td>
-                        <td>Supergreens, Feta & Mozzarella cheese</td>
-                        <td>Earthy & Creamy</td>
-                        <td>Oven-Baked</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Vegan Beef</strong></td>
-                        <td>Plant protein, Andean spices</td>
-                        <td>Smoky & Filling</td>
-                        <td>Oven-Baked</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <img src="https://raw.githubusercontent.com/torremercedes1967-afk/tummi/main/logo.png" alt="Tummi Logo" class="footer-logo">
-        <div class="footer-title">TUMMI</div>
-        <div class="footer-tagline">Artisanal & Fresh</div>
-        <div class="social-links">
-            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        <div class="copyright">
-            &copy; 2026 TUMMI Artisanal & Fresh. All rights reserved.
-        </div>
+    <footer>
+        <p>&copy; 2026 Tummi. Todos los derechos reservados.</p>
     </footer>
 
 </body>
