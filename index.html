@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tummi | Empanadas Artesanales</title>
+    <title>Tummi | Artisanal Empanadas</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #0d0d0d; color: #f5f5f5; }
         header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(13, 13, 13, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
         .logo-container { display: flex; align-items: center; gap: 15px; }
-        .logo-container img { width: 45px; height: 45px; object-fit: contain; border-radius: 50%; }
+        .logo-container img { width: 45px; height: 45px; object-fit: contain; border-radius: 50%; border: 2px solid #d4a373; }
         .logo-container span { font-size: 24px; font-weight: bold; letter-spacing: 2px; color: #fff; }
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav ul li a { text-decoration: none; color: #ccc; font-weight: 500; transition: color 0.3s; }
@@ -21,6 +21,16 @@
         .hero-content p { font-size: 1.2rem; margin-bottom: 30px; color: #ddd; }
         .btn { display: inline-block; padding: 12px 30px; background-color: #d4a373; color: #0d0d0d; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
         .btn:hover { background-color: #bc6c25; color: #fff; }
+        
+        .inca-border { height: 8px; background: repeating-linear-gradient(45deg, #d4a373, #d4a373 15px, #bc6c25 15px, #bc6c25 30px, #222 30px, #222 45px); }
+
+        .menu-section { padding: 100px 20px; background-color: #141414; text-align: center; }
+        .menu-section h2 { font-size: 2.5rem; margin-bottom: 10px; color: #d4a373; letter-spacing: 2px; }
+        .menu-subtitle { color: #888; margin-bottom: 40px; font-style: italic; }
+        .menu-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
+        .menu-card { background: #1f1f1f; border-top: 4px solid #d4a373; border-radius: 6px; width: 300px; padding: 25px; text-align: left; }
+        .menu-card h3 { color: #fff; margin-bottom: 10px; font-size: 1.4rem; }
+        .menu-card p { color: #aaa; font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -32,9 +42,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#menu">Menú</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -42,12 +52,33 @@
     <section class="hero" id="home">
         <video autoplay muted loop playsinline>
             <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-plate-with-empanadas-42861-large.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
+            Your browser does not support video.
         </video>
         <div class="hero-content">
-            <h1>SABOR ARTESANAL</h1>
-            <p>Empanadas artesanales con ingredientes selectos y un toque único.</p>
-            <a href="#menu" class="btn">Ver Menú</a>
+            <h1>ARTISANAL TASTE</h1>
+            <p>Handmade artisanal empanadas crafted with select ingredients and traditional heritage.</p>
+            <a href="#menu" class="btn">View Menu</a>
+        </div>
+    </section>
+
+    <div class="inca-border"></div>
+
+    <section class="menu-section" id="menu">
+        <h2>OUR MENU</h2>
+        <p class="menu-subtitle">Baked with passion and our signature touch</p>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <h3>Beef</h3>
+                <p>Juicy filling of finely selected ground beef seasoned with traditional spices.</p>
+            </div>
+            <div class="menu-card">
+                <h3>Chicken</h3>
+                <p>Tender shredded chicken seasoned in an artisanal style with fresh vegetables.</p>
+            </div>
+            <div class="menu-card">
+                <h3>Spinach & Cheese</h3>
+                <p>Delicious combination of fresh spinach and a blend of select cheeses.</p>
+            </div>
         </div>
     </section>
 
